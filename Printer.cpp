@@ -1,6 +1,5 @@
 #include "Printer.h"
 
-// Printer class implementation
 Printer::Printer(std::string model, std::string manufacturer, int availableCount)
     : model(model), manufacturer(manufacturer), availableCount(availableCount), printedCount(0) {}
 
@@ -13,7 +12,6 @@ void Printer::print(int pages) {
     availableCount -= pages;
 }
 
-// InkjetPrinter class implementation
 InkjetPrinter::InkjetPrinter(std::string model, std::string manufacturer, int availableCount, int inkLevel)
     : Printer(model, manufacturer, availableCount), inkLevel(inkLevel) {}
 
@@ -28,17 +26,17 @@ void InkjetPrinter::printInk(int pages) {
         return;
     }
 
-    print(pages); // Call the base class print method
+    print(pages); 
     inkLevel -= pages; // Decrease ink level by the number of pages printed
     std::cout << "Printed " << pages << " pages." << std::endl;
-    showStatus(); // Display current status after printing
+    showStatus(); 
 }
 
 void InkjetPrinter::showStatus() const {
-    std::cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount << "Àå, ³²Àº À×Å© " << inkLevel << std::endl;
+    std::cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount << "ìž¥, ë‚¨ì€ ìž‰í¬ " << inkLevel << std::endl;
 }
 
-// LaserPrinter class implementation
+
 LaserPrinter::LaserPrinter(std::string model, std::string manufacturer, int availableCount, int tonerLevel)
     : Printer(model, manufacturer, availableCount), tonerLevel(tonerLevel) {}
 
@@ -60,5 +58,5 @@ void LaserPrinter::printInk(int pages) {
 }
 
 void LaserPrinter::showStatus() const {
-    std::cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount << "Àå, ³²Àº Åä³Ê " << tonerLevel << std::endl;
+    std::cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount << "ìž¥, ë‚¨ì€ í† ë„ˆ " << tonerLevel << std::endl;
 }
