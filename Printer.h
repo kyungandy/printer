@@ -14,8 +14,8 @@ protected:
 public:
     Printer(std::string model, std::string manufacturer, int availableCount);
     void print(int pages);
-    virtual void printInk(int pages) = 0; // Pure virtual function
-    virtual void showStatus() const = 0; // Pure virtual function for status
+    virtual void printInk(int pages) = 0; 
+    virtual void showStatus() const = 0; 
     virtual ~Printer() {}
 };
 
@@ -26,7 +26,7 @@ private:
 public:
     InkjetPrinter(std::string model, std::string manufacturer, int availableCount, int inkLevel);
     void printInk(int pages) override;
-    void showStatus() const override; // Override for status
+    void showStatus() const override; 
 };
 
 class LaserPrinter : public Printer {
@@ -36,7 +36,7 @@ private:
 public:
     LaserPrinter(std::string model, std::string manufacturer, int availableCount, int tonerLevel);
     void printInk(int pages) override;
-    void showStatus() const override; // Override for status
+    void showStatus() const override; 
 };
 
-#endif // PRINTER_H
+#endif 
