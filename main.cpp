@@ -2,44 +2,44 @@
 
 int main() {
     InkjetPrinter inkjet("Officejet V40", "HP", 5, 10);
-    LaserPrinter laser("SCX-6345", "»ï¼ºÀüÀÚ", 3, 20);
+    LaserPrinter laser("SCX-6345", "ì‚¼ì„±ì „ì", 3, 20);
 
     int option, pages;
     char cont;
 
     do {
-        std::cout << "ÇÁ¸°ÅÍ¸¦ ¼±ÅÃÇÏ¼¼¿ä (1:À×Å©Á¬, 2:·¹ÀÌÀú): ";
+        std::cout << "í”„ë¦°í„°ë¥¼ ì„ íƒí•˜ì„¸ìš” (1:ì‰í¬ì ¯, 2:ë ˆì´ì €): ";
         std::cin >> option;
 
         if (option == 1) {
-            std::cout << "À×Å©Á¬ ÇÁ¸°ÅÍ¸¦ ¼±ÅÃÇß½À´Ï´Ù." << std::endl;
-            inkjet.showStatus(); // À×Å©Á¬ ÇÁ¸°ÅÍÀÇ »óÅÂ Ãâ·Â
+            std::cout << "ì‰í¬ì ¯ í”„ë¦°í„°ë¥¼ ì„ íƒí–ˆìŠµë‹ˆë‹¤." << std::endl;
+            inkjet.showStatus(); 
         }
         else if (option == 2) {
-            std::cout << "·¹ÀÌÀú ÇÁ¸°ÅÍ¸¦ ¼±ÅÃÇß½À´Ï´Ù." << std::endl;
-            laser.showStatus(); // ·¹ÀÌÀú ÇÁ¸°ÅÍÀÇ »óÅÂ Ãâ·Â
+            std::cout << "ë ˆì´ì € í”„ë¦°í„°ë¥¼ ì„ íƒí–ˆìŠµë‹ˆë‹¤." << std::endl;
+            laser.showStatus(); 
         }
         else {
-            std::cout << "Àß¸øµÈ ¿É¼ÇÀÔ´Ï´Ù." << std::endl;
-            continue; // Àß¸øµÈ ¿É¼ÇÀÇ °æ¿ì ÇöÀç ·çÇÁ ¹İº¹
+            std::cout << "ì˜ëª»ëœ ì˜µì…˜ì…ë‹ˆë‹¤." << std::endl;
+            continue; 
         }
 
-        std::cout << "ÀÎ¼âÇÒ ÆäÀÌÁö ¼ö ÀÔ·Â: ";
+        std::cout << "ì¸ì‡„í•  í˜ì´ì§€ ìˆ˜ ì…ë ¥: ";
         std::cin >> pages;
 
         if (option == 1) {
-            inkjet.printInk(pages); // À×Å©Á¬ ÇÁ¸°ÅÍ·Î ÀÎ¼â
+            inkjet.printInk(pages); 
         }
         else if (option == 2) {
-            laser.printInk(pages); // ·¹ÀÌÀú ÇÁ¸°ÅÍ·Î ÀÎ¼â
+            laser.printInk(pages); 
         }
 
-        std::cout << "°è¼Ó ÇÁ¸°Æ® ÇÏ½Ã°Ú½À´Ï±î? (y/n): ";
+        std::cout << "ê³„ì† í”„ë¦°íŠ¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n): ";
         std::cin >> cont;
 
     } while (cont == 'y' || cont == 'Y');
 
-    std::cout << "ÇÁ¸°ÆÃ Á¾·á." << std::endl;
+    std::cout << "í”„ë¦°íŒ… ì¢…ë£Œ." << std::endl;
 
     return 0;
 }
